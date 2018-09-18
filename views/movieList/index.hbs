@@ -1,0 +1,26 @@
+
+
+
+{{# each movies }}
+    <div class="space">
+        <div class="row">
+            {{# each this }}
+                <div class="col-sm-6 col-md-4">
+                    <div class="card ml-30px mr-30px">
+                        <img class="card-img-top img-responsive" src="{{ this.imagePath }}" alt="...">
+                        <div class="card-body">
+                            <br>
+                            <h3 class="card-title">{{ this.title }}</h3>
+                            <br>
+                            <h5>{{ this.language }}</h5>
+                            <p class="description">{{ this.description }}</p>
+                            <div class="clearfix">
+                                <a href="/start-learning/{{this.url}}"  class="btn btn-warning learn">Learn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{/each}}

@@ -1,0 +1,13 @@
+ {{# each movies}}
+<div class="row">
+    <div class="float-left">
+        <video controls="controls" id="video1" width="800">
+            <source src="{{this.videoPath}}" type="video/mp4"> {{!-- </video>
+    </div>
+    <div class="float-right">
+        <video> --}}
+            <track src="{{this.subPath}}" kind="subtitles" srclang="en" label="English">
+        </video>
+    </div>
+</div>
+{{/each}}

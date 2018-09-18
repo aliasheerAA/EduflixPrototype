@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    background-color: red;
+    background:none !important;
+    border: 0;
+    box-shadow:none !important;
+    -webkit-box-shadow: none !important;
+ }
+
+.navbar .navbar-nav>li>a {
+    color: grey; 
+ }
+
+.card {
+    max-width: 400px;
+    max-height: 650px;
+}
+
+.card .card-title {
+    font-weight: 600;
+    font-size: 26px;
+    text-align: center;
+    color: goldenrod;
+}
+
+.card img {
+    max-width: 400px;
+    max-height: 200px;
+}
+
+.card .description {
+    font: 14px Montserrat, sans-serif;
+    line-height: 0.7cm;
+    color: grey;
+    text-align: justify;
+}
+
+.price {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.space {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.col-padding {
+    margin:10px; 
+    padding:10px;
+}
+
+h1 {
+    font-size: 100px;
+    color: #fed136;
+    /* font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive; */
+}
+
+h2,
+h4,
+h5,
+h6 {
+  color: goldenrod;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.75;
+    font-size: 18px;
+}
+
+.navbar-brand {
+    color: #fec503;
+    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+    font-size: 28px;
+}
+
+a:hover {
+    color: #fec503;
+  }
+
+.about-img {
+    padding-left: 10px;
+    width: 600px;
+    height: 380px;
+}
+
+.container {
+    padding: 20px 0;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.middle-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+@media (orientation: portrait) {
+    .full {
+      background-size: 200% auto;
+      background-position: top right;
+    }
+  }
+

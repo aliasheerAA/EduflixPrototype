@@ -1,0 +1,43 @@
+<div class="container-learn-page">
+    <h2 class="text-center">ENTERTAIN AND LEARN</h2>
+    <h4 class="text-center">STREAM A VIDEO TO EDUCATE YOURSELF</h4>
+</div>
+
+<div class="video-player-container">
+    <div class="row">
+        {{!-- Video player div --}}
+        <div class="col-sm-7 col-md-6">
+            <div class="player">
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{link}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                {{!-- <video class="player__video viewer" width="800" src="videos/howtotrainyourdragon3.mp4" autoplay></video> --}}
+
+                {{!-- Video player controller div --}}
+                <div class="player__controls">ß
+                    <div class="progress">
+                        <div class="progress__filled"></div>
+                    </div>
+                    <button class="player__button toggle" title="Toggle Play">►</button>
+                    <input type="range" name="volume" class="player__slider" min=0 max="1" step="0.05" value="1">
+                    <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+                    <button data-skip="-10" class="player__button">« 10s</button>
+                    <button data-skip="25" class="player__button">» 25s</button>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Info and subtitle div --}}
+        <div class="sub-container">
+            <div class="col-sm-5 col-md-6">
+                <p>Title: </p>
+                <p>Description: </p>
+                <p>Sub: </p>
+                <p id="subtitles" class="text-justify"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/showSub.js"></script>
+<script src="js/videoController.js"></script>

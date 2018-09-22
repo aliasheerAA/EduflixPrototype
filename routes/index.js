@@ -1,9 +1,13 @@
+//import expree library
 var express = require('express');
+//import router library
 var router = express.Router();
+//imports the schema for inserting movies
 var Movie = require('../models/movie');
+//import mongoose library
 var mongoose = require('mongoose');
 
-/* GET home page. */
+// route to home page.
 router.get('/', function (req, res, next) {
   Movie.find(function (err, docs) {
     var movieChunks = [];
@@ -15,20 +19,35 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get('/start-learning/:movieUrl', function (req, res, next) {
+// route to learn page
+router.get('/start-learning/:movieID', function (req, res, next) {
 
-  var url = req.params.movieUrl;
-  console.log(url);
-
-  res.render('learn2', {link: url});
-
-
+  var id = req.params.movieID;
+  var movieContents;
+// search database based on id
+  Movie.findById(id)
+  .exec()
+  .then(doc=>{
+    if(doc){
+    movieContents = doc;
+// render the learn page
+    res.render('learn', {movie: movieContents});
+    }
+    else {
+      res.status(404).json({
+        message: 'no valid movie id entered'
+      });
+    }
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
 });
 
-router.get('/test2', function (req, res, next) {
-  res.send('test');
-});
-
+// route to handle post pages to the database.
 router.post('/movies', (req, res, next) => {
     const movie = new Movie({
       _id: new mongoose.Types.ObjectId(),
@@ -41,8 +60,8 @@ router.post('/movies', (req, res, next) => {
         timeEnd: req.body.message.timeEnd,
         text: req.body.message.text
       }
-
     });
+    // save to database
       movie.save()
       .then(result => {
         console.log(result);
@@ -51,15 +70,11 @@ router.post('/movies', (req, res, next) => {
         });
       })
       .catch(err => {
-
-
         console.log(err);
         res.status(500).json({
           error: err
         });
       });
-
-
 });
 
 module.exports = router;

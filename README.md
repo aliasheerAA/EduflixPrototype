@@ -1,2 +1,2 @@
 # frontend_eduflix
-bla bla
+Eduflix project

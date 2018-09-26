@@ -7,8 +7,17 @@ var Movie = require('../models/movie');
 //import mongoose library
 var mongoose = require('mongoose');
 
-// route to home page.
+
+
+
+// route to homepage
 router.get('/', function (req, res, next) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+
+// route to home page.
+router.get('/movies', function (req, res, next) {
   Movie.find(function (err, docs) {
     var movieChunks = [];
     var chunkSize = 3;
